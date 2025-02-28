@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS db_orders;
+USE db_orders;
+
+CREATE TABLE IF NOT EXISTS `tbl_order` (
+    `order_id` INT AUTO_INCREMENT PRIMARY KEY UNIQUE,
+    `name` VARCHAR(255) NOT NULL,
+    `order_date` DATETIME NULL DEFAULT NULL,
+    `total_value` DECIMAL(10, 2) NULL DEFAULT NULL,
+    `status` VARCHAR(255) NOT NULL
+);

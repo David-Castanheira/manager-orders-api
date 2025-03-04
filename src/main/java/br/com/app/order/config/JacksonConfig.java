@@ -15,6 +15,7 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 public class JacksonConfig {
     @Bean
     public ObjectMapper objectMapper() {
+        // Serializa o atributo timestamp com base na data e hora local
         JavaTimeModule module = new JavaTimeModule();
         LocalDateTimeSerializer localDateTimeSerializer = new LocalDateTimeSerializer(DateTimeFormatter.ISO_DATE_TIME);
         module.addSerializer(LocalDateTime.class, localDateTimeSerializer);

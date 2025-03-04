@@ -5,12 +5,12 @@ import java.time.LocalDateTime;
 
 public class EventCreateOrder {
 
-    private final Integer orderId;
-    private final String name;
-    private final LocalDateTime order_date;
-    private final BigDecimal total_value;
-    private final String status;
-    private final LocalDateTime timestamp;
+    private Integer orderId;
+    private String name;
+    private LocalDateTime order_date;
+    private BigDecimal total_value;
+    private String status;
+    private LocalDateTime timestamp;
 
     public EventCreateOrder() {
         this.orderId = null;
@@ -34,23 +34,47 @@ public class EventCreateOrder {
         return orderId;
     }
 
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
+    }
+
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }    
+
     public LocalDateTime getOrder_date() {
         return order_date;
+    }
+
+    public void setOrder_date(LocalDateTime order_date) {
+        this.order_date = order_date;
     }
 
     public BigDecimal getTotal_value() {
         return total_value;
     }
 
+    public void setTotal_value(BigDecimal total_value) {
+        this.total_value = total_value;
+    }
+
     public String getStatus() {
         return status;
     }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public LocalDateTime getTimestamp() {
         return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
     }
 }

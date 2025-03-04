@@ -28,7 +28,7 @@ public class EventOrderService {
         this.objectMapper.registerModule(new JavaTimeModule());
     }
 
-    public void saveEventOrder(EventCreateOrder event) {
+    public void createEventOrder(EventCreateOrder event) {
         saveEvent(event, "EventCreateOrder");
     }
 
@@ -61,7 +61,15 @@ public class EventOrderService {
         }
     }
 
-    public<T> T desserializeEvent(String dataEvent, Class<T> classEvent) {
+    public String serializeEvent(Object event) {
+        try {
+            return objectMapper.writeValueAsString(event);
+        } catch (IOException e) {
+            throw new RuntimeException("Event not serialized", e);
+        }
+    }
+
+    public<T> T deserializeEvent(String dataEvent, Class<T> classEvent) {
         try {
             return objectMapper.readValue(dataEvent, classEvent);
         } catch (IOException e) {

@@ -4,8 +4,8 @@ import java.time.LocalDateTime;
 
 public class EventCancelOrder {
 
-    private final Integer orderId;
-    private final LocalDateTime timestamp;
+    private Integer orderId;
+    private LocalDateTime timestamp;
 
     public EventCancelOrder() {
         this.orderId = null;
@@ -23,5 +23,13 @@ public class EventCancelOrder {
 
     public LocalDateTime getTimestamp() {
         return timestamp;
+    }
+
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
     }
 }

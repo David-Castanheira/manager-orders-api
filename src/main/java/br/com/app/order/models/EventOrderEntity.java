@@ -15,7 +15,7 @@ public class EventOrderEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "id", unique = true, nullable = false)
     private Long eventId;
 
     @Column(name = "order_id", nullable = false)
